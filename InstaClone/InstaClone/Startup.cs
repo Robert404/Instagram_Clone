@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using InstaClone.Data;
 using InstaClone.Models;
 using InstaClone.Models.User;
+using InstaClone.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +34,7 @@ namespace InstaClone
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<ApplicationUser, IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddTransient<IApplicationUser,ApplicationUserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

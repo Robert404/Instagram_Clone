@@ -5183,11 +5183,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\InstaClone\\InstaClone\\InstaClone.csproj",
+      "projectUniqueName": "C:\\Instagram_New\\Instagram_Clone\\InstaClone\\InstaClone\\InstaClone.csproj",
       "projectName": "InstaClone",
-      "projectPath": "C:\\Projects\\InstaClone\\InstaClone\\InstaClone.csproj",
+      "projectPath": "C:\\Instagram_New\\Instagram_Clone\\InstaClone\\InstaClone\\InstaClone.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\InstaClone\\InstaClone\\obj\\",
+      "outputPath": "C:\\Instagram_New\\Instagram_Clone\\InstaClone\\InstaClone\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -29,7 +32,7 @@
                 <div>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <p>@User.Identity.Name</p>
+                        <a asp-controller="Profile" asp-action="Detail" asp-route-id="@UserManager.GetUserId(User)">@UserManager.GetUserName(User)</a>
 
                         <form method="post" asp-controller="Account" asp-action="Logout">
                             <input type="submit" value="Logout" />
