@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using InstaClone.Data;
 using InstaClone.Models;
+using InstaClone.Models.Photo;
 using InstaClone.Models.User;
 using InstaClone.Service;
 using Microsoft.AspNetCore.Builder;

@@ -1,8 +1,12 @@
 ﻿using InstaClone.Data;
+using InstaClone.Models;
+using InstaClone.Models.Photo;
 using InstaClone.Models.Profile;
 using InstaClone.Models.User;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.IO;
 
 namespace InstaClone.Controllers
 {
@@ -26,5 +30,7 @@ namespace InstaClone.Controllers
 
             return View(model) ;
         }
+
+      
     }
 }

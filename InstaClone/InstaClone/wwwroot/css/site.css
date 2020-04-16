@@ -69,3 +69,14 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+
+/*Images*/
+
+.userProfilePhoto {
+    height: 150px;
+    width: auto;
+    background-size: 100%;
+    border-radius:7px;
+}
+

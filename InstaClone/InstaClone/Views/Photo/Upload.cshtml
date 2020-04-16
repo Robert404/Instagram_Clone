@@ -1,0 +1,9 @@
+﻿@model InstaClone.Models.Photo.PhotoViewModel
+
+<form method="post" asp-controller="Photo" asp-action="UploadPhoto" enctype="multipart/form-data">
+    <div>
+        <label asp-for="Photo"></label><br />
+        <input asp-for="Photo" />
+    </div>
+    <button type="submit">Upload</button>
+</form>

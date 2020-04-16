@@ -1,6 +1,9 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
-}
-<h1>@ViewData["Title"]</h1>
+﻿@model InstaClone.Models.PhotoModel
 
-<p>Use this page to detail your site's privacy policy.</p>
+
+@{
+    var photoPath = "~/images/" + (Model.Photo ?? "noimage.jpg");
+}
+    <div>
+        <img class="card-img-top userProfilePhoto" src="@photoPath" asp-append-version="true" />
+    </div>

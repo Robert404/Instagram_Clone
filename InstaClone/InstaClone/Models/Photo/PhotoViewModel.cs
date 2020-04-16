@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace InstaClone.Models
+namespace InstaClone.Models.Photo
 {
-    public class PhotoModel
+    public class PhotoViewModel
     {
         public int Id { get; set; }
         public string Description { get; set; }
-        public string Photo { get; set; }
-
+        public IFormFile Photo { get; set; }
     }
 }

@@ -10,7 +10,6 @@ namespace InstaClone.Models.User
     public class ApplicationUser:IdentityUser
     {
         public string Image { get; set; }
-
         public string Subscribers { get; set; }
         public string Subscribed { get; set; }
     }
