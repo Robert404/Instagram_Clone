@@ -1,9 +1,4 @@
-﻿@model InstaClone.Models.PhotoModel
+﻿@model InstaClone.Models.Profile.ProfileModel
 
 
-@{
-    var photoPath = "~/images/" + (Model.Photo ?? "noimage.jpg");
-}
-    <div>
-        <img class="card-img-top userProfilePhoto" src="@photoPath" asp-append-version="true" />
-    </div>
+<h2>@Model.Name</h2>

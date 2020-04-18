@@ -1,6 +1,7 @@
 ﻿using InstaClone.Models;
 using InstaClone.Models.Photo;
 using InstaClone.Models.Profile;
+using InstaClone.Models.User;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,20 +15,21 @@ namespace InstaClone.Controllers
     public class PhotoController:Controller
     {
         private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly ApplicationDbContext _context;
 
-        public PhotoController(IHostingEnvironment hostingEnvironment) 
+        public PhotoController(IHostingEnvironment hostingEnvironment, ApplicationDbContext context) 
         {
             _hostingEnvironment = hostingEnvironment;
+            _context = context;
         }
-        
-        [HttpGet]
+
         public IActionResult Upload() 
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> UploadPhoto(PhotoViewModel model) 
+        public IActionResult UploadPhoto(PhotoViewModel model) 
         {
             string uniqueFileName = null;
             if (model.Photo != null)
@@ -43,7 +45,12 @@ namespace InstaClone.Controllers
                 Photo = uniqueFileName
             };
 
-            return View(model);
+            _context.Photos.Add(photo);
+            _context.SaveChanges();
+
+            return RedirectToAction("Detail","Profile");
         }
+
+
     }
 }

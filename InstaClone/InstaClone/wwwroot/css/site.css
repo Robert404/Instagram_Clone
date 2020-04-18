@@ -12,6 +12,10 @@ a {
   color: #0366d6;
 }
 
+h2 {
+    font-family: 'Roboto'; 
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
@@ -78,5 +82,12 @@ body {
     width: auto;
     background-size: 100%;
     border-radius:7px;
+}
+
+
+/*Buttons*/
+
+.uploadBtn{
+    margin-left: 1000px;
 }
 
