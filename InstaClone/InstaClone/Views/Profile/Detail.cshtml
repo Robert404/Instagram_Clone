@@ -1,9 +1,10 @@
 ﻿@model InstaClone.Models.Profile.ProfileModel
 @inject ApplicationDbContext DbContext
 
+
 @{
     var photoPath = "~/images/" + (Model.Image ?? "noimage.jpg");
-    
+
 }
 <div class="card">
     <div class="card-header">
@@ -18,8 +19,12 @@
     <div class="card-footer">
         @foreach (var m in DbContext.Photos)
         {
-            var photoPath2 = "~/images/" + (m.Photo ?? "noimage.jpg");
-            <img class="card-img-top userProfilePhoto" src="@photoPath2" asp-append-version="true" />
+            if (User.Identity.Name == m.Name)
+            {
+                var photoPath2 = "~/images/" + (m.Photo ?? "noimage.jpg");
+                <img class="card-img-top userAllPhotos" src="@photoPath2" asp-append-version="true" />
+            }
+
         }
     </div>
 </div>

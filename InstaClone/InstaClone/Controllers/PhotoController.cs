@@ -1,4 +1,5 @@
-﻿using InstaClone.Models;
+﻿using InstaClone.Data;
+using InstaClone.Models;
 using InstaClone.Models.Photo;
 using InstaClone.Models.Profile;
 using InstaClone.Models.User;
@@ -16,11 +17,13 @@ namespace InstaClone.Controllers
     {
         private readonly IHostingEnvironment _hostingEnvironment;
         private readonly ApplicationDbContext _context;
+        private readonly IApplicationUser _userService; 
 
-        public PhotoController(IHostingEnvironment hostingEnvironment, ApplicationDbContext context) 
+        public PhotoController(IHostingEnvironment hostingEnvironment, ApplicationDbContext context, IApplicationUser userService) 
         {
             _hostingEnvironment = hostingEnvironment;
             _context = context;
+            _userService = userService;
         }
 
         public IActionResult Upload() 
@@ -42,13 +45,14 @@ namespace InstaClone.Controllers
 
             var photo = new PhotoModel
             {
-                Photo = uniqueFileName
+                Photo = uniqueFileName,
+                Name = model.UserName
             };
 
             _context.Photos.Add(photo);
             _context.SaveChanges();
 
-            return RedirectToAction("Detail","Profile");
+            return RedirectToAction("Index","Home");
         }
 
 

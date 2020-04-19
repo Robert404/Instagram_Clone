@@ -9,8 +9,13 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: mediumblue;
+  font-family: 'Roboto';
 }
+    a:hover {
+        text-decoration: none;
+        color: coral;
+    }
 
 h2 {
     font-family: 'Roboto'; 
@@ -75,19 +80,30 @@ body {
 }
 
 
-/*Images*/
 
+/*Images*/
 .userProfilePhoto {
     height: 150px;
     width: auto;
     background-size: 100%;
-    border-radius:7px;
+    border-radius: 100px;
+}
+
+.userAllPhotos {
+    height: 150px;
+    width: auto;
+    background-size: 100%;
+    border-radius: 7px;
+    margin: 5px;
 }
 
 
 /*Buttons*/
-
-.uploadBtn{
+.uploadBtn {
     margin-left: 1000px;
+}
+
+.logoutBtn {
+    
 }
 

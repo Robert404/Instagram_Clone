@@ -1,9 +1,13 @@
 ﻿@model InstaClone.Models.Photo.PhotoViewModel
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
 
 <form method="post" asp-controller="Photo" asp-action="UploadPhoto" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <input type="hidden" value="@User.Identity.Name" asp-for="UserName" />
     <div>
-        <label asp-for="Photo"></label><br />
+        <label>Please Upload a Photo</label><br />
         <input asp-for="Photo" />
     </div>
-    <input type="submit" value="Upload" />
+    <input type="submit" value="Upload" class="btn btn-info" />
 </form>
