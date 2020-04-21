@@ -7,22 +7,42 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using InstaClone.Models;
 using InstaClone.Models.User;
+using InstaClone.Models.Profile;
+using InstaClone.Data;
 
 namespace InstaClone.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IApplicationUser _userService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IApplicationUser userService)
         {
             _logger = logger;
+            _userService = userService;
         }
 
         public IActionResult Index()
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult SearchProfile(SearchIndexModel model) 
+        {
+            var users = _userService.GetFilteredUsers(model.QueryString);
+            var emptyQuery = model.QueryString == null;
+
+            var user = new SearchIndexModel
+            {
+                QueryResult = users,
+                IsQueryNull = emptyQuery
+            };
+
+            return View(user);
+        }
+
 
         public IActionResult Privacy()
         {

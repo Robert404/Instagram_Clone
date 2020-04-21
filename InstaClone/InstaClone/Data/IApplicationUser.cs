@@ -10,5 +10,6 @@ namespace InstaClone.Data
     {
         ApplicationUser GetById(string id);
         IEnumerable<ApplicationUser> GetAllUsers();
+        IEnumerable<ApplicationUser> GetFilteredUsers(string name);
     }
 }

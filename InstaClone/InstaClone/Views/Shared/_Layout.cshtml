@@ -9,6 +9,8 @@
     <title>@ViewData["Title"] - InstaClone</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -37,8 +39,8 @@
                     {
                         <a asp-controller="Profile" asp-action="Detail" asp-route-id="@UserManager.GetUserId(User)">@UserManager.GetUserName(User)</a>
 
-                        <form class="logoutBtn" method="post" asp-controller="Account" asp-action="Logout">
-                            <input type="submit" value="Logout" />
+                        <form method="post" asp-controller="Account" asp-action="Logout">
+                            <input class="btn logoutBtn" type="submit" value="Logout" />
                         </form>
                     }
                     else

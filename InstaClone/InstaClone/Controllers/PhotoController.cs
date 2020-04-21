@@ -17,13 +17,11 @@ namespace InstaClone.Controllers
     {
         private readonly IHostingEnvironment _hostingEnvironment;
         private readonly ApplicationDbContext _context;
-        private readonly IApplicationUser _userService; 
 
-        public PhotoController(IHostingEnvironment hostingEnvironment, ApplicationDbContext context, IApplicationUser userService) 
+        public PhotoController(IHostingEnvironment hostingEnvironment, ApplicationDbContext context) 
         {
             _hostingEnvironment = hostingEnvironment;
             _context = context;
-            _userService = userService;
         }
 
         public IActionResult Upload() 

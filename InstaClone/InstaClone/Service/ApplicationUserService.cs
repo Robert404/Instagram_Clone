@@ -24,5 +24,10 @@ namespace InstaClone.Service
         {
             return GetAllUsers().FirstOrDefault(u => u.Id == id);
         }
+
+        public IEnumerable<ApplicationUser> GetFilteredUsers(string name)
+        {
+            return GetAllUsers().Where(u => u.UserName == name);
+        }
     }
 }

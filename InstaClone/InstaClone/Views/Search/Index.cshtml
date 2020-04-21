@@ -1,0 +1,16 @@
+﻿@model InstaClone.Models.Profile.SearchIndexModel
+
+@if (!Model.IsQueryNull) 
+{
+    @foreach (var m in Model.QueryResult) 
+    {
+        <h2>@m.UserName</h2>
+    }
+}
+
+else 
+{
+    <div>
+        <h2>No Users</h2>
+    </div>        
+}

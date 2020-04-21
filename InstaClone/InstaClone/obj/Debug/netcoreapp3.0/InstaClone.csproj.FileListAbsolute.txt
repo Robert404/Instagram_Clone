@@ -154,3 +154,4 @@ C:\Instagram_New\Instagram_Clone\InstaClone\InstaClone\obj\Debug\netcoreapp3.0\I
 C:\Instagram_New\Instagram_Clone\InstaClone\InstaClone\obj\Debug\netcoreapp3.0\InstaClone.pdb
 C:\Instagram_New\Instagram_Clone\InstaClone\InstaClone\obj\Debug\netcoreapp3.0\Razor\Views\Profile\Detail.cshtml.g.cs
 C:\Instagram_New\Instagram_Clone\InstaClone\InstaClone\obj\Debug\netcoreapp3.0\Razor\Views\Photo\Upload.cshtml.g.cs
+C:\Instagram_New\Instagram_Clone\InstaClone\InstaClone\obj\Debug\netcoreapp3.0\Razor\Views\Search\Index.cshtml.g.cs

@@ -1,5 +1,12 @@
-﻿@{
+﻿@model InstaClone.Models.Profile.SearchIndexModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
+<div>
+    <form asp-controller="Search" asp-action="Search" method="post">
+        <input asp-for="QueryString" class="profileSearch" placeholder="Search..." />
+    </form>
+</div>
 
