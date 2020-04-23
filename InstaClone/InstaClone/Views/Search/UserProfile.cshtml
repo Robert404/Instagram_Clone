@@ -1,0 +1,31 @@
+﻿@model InstaClone.Models.Profile.ProfileModel
+@inject ApplicationDbContext DbContext
+
+@{
+    var photoPath = "~/images/" + (Model.Image ?? "noimage.jpg");
+}
+
+    <div class="card">
+        <div class="card-header">
+            <h2>@Model.Name</h2>
+            @if (User.Identity.Name == Model.Name)
+            {
+                <div class="uploadBtn">
+                    <a asp-controller="Photo" asp-action="Upload" class="btn btn-dark">Upload</a>
+                </div>
+            }
+        </div>
+        <div class="card-body">
+            <img class="card-img-top userProfilePhoto" src="@photoPath" asp-append-version="true" />
+        </div>
+        <div class="card-footer">
+            @foreach (var m in DbContext.Photos)
+            {
+                if (m.Name == Model.Name)
+                {
+                    var photoPath2 = "~/images/" + (m.Photo ?? "noimage.jpg");
+                    <img class="card-img-top userAllPhotos" src="@photoPath2" asp-append-version="true" />
+                }
+            }
+        </div>
+    </div>

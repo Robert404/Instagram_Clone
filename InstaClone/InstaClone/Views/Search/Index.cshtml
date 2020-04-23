@@ -1,14 +1,14 @@
 ﻿@model InstaClone.Models.Profile.SearchIndexModel
 
-@if (!Model.IsQueryNull) 
+@if (Model.QueryString != null) 
 {
     @foreach (var m in Model.QueryResult) 
     {
-        <h2>@m.UserName</h2>
+        <h2><a asp-controller="Search" asp-action="UserProfile" asp-route-name="@m.UserName">@m.UserName</a></h2>
     }
 }
 
-else 
+@if(Model.IsNoResult)
 {
     <div>
         <h2>No Users</h2>

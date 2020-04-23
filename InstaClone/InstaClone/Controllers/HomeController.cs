@@ -28,22 +28,6 @@ namespace InstaClone.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult SearchProfile(SearchIndexModel model) 
-        {
-            var users = _userService.GetFilteredUsers(model.QueryString);
-            var emptyQuery = model.QueryString == null;
-
-            var user = new SearchIndexModel
-            {
-                QueryResult = users,
-                IsQueryNull = emptyQuery
-            };
-
-            return View(user);
-        }
-
-
         public IActionResult Privacy()
         {
             return View();

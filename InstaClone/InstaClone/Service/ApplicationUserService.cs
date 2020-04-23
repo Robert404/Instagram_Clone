@@ -27,7 +27,7 @@ namespace InstaClone.Service
 
         public IEnumerable<ApplicationUser> GetFilteredUsers(string name)
         {
-            return GetAllUsers().Where(u => u.UserName == name);
+            return GetAllUsers().Where(u => u.UserName.ToLower().Contains(name.ToLower()) || name.ToLower().Contains(u.UserName.ToLower()));
         }
     }
 }

@@ -10,6 +10,6 @@ namespace InstaClone.Models.Profile
     {
         public string QueryString { get; set; }
         public IEnumerable<ApplicationUser> QueryResult { get; set; }
-        public bool IsQueryNull { get; set; }
+        public bool IsNoResult { get; set; }
     }
 }

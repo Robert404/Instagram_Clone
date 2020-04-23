@@ -16,25 +16,41 @@ namespace InstaClone.Controllers
             _userService = userService;
         }
 
-        public IActionResult Index(string query) 
+        public IActionResult Index(SearchIndexModel model) 
         {
-            var users = _userService.GetFilteredUsers(query);
-            var emptyQuery = query == null;
-
-            var model = new SearchIndexModel
+            var users = _userService.GetFilteredUsers(model.QueryString);
+            var noResult = (!string.IsNullOrEmpty(model.QueryString) && (!users.Any()));
+        
+            var model1 = new SearchIndexModel
             {
-                QueryString = query,
+                QueryString = model.QueryString,
                 QueryResult = users,
-                IsQueryNull = emptyQuery
+                IsNoResult = noResult
+            };
+
+            return View(model1);
+        }
+
+        [HttpPost]
+        public IActionResult Search(SearchIndexModel model)
+        {
+            return RedirectToAction("Index", new { model.QueryString });
+        }
+
+        public IActionResult UserProfile(string name) 
+        {
+            var user = _userService.GetAllUsers().FirstOrDefault(u => u.UserName == name);
+
+            var model = new ProfileModel
+            {
+                Name = user.UserName,
+                Image = user.Image,
+                Subscribers = user.Subscribers,
+                Subscribed = user.Subscribed
             };
 
             return View(model);
         }
 
-        [HttpPost]
-        public IActionResult Search(string query)
-        {
-            return RedirectToAction("Index", new { query });
-        }
     }
 }
