@@ -15,12 +15,12 @@ namespace InstaClone.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IApplicationUser _userService;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger, IApplicationUser userService)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
-            _userService = userService;
+            _context = context;
         }
 
         public IActionResult Index()

@@ -1,4 +1,5 @@
 ﻿@model InstaClone.Models.Profile.SearchIndexModel
+@inject ApplicationDbContext Context
 
 @{
     ViewData["Title"] = "Home Page";
@@ -10,3 +11,49 @@
     </form>
 </div>
 
+<!--
+
+
+<div class="card">
+    <div class="card-header">
+
+    </div>
+    <div class="card-body">
+        @foreach (var photo in Context.Photos)
+        {
+            @photo.Name
+            var photoPath = "~/images/" + (photo.Photo ?? "noimage.jpg");
+            <img class="card-img-top userAllPhotos" src="@photoPath" asp-append-version="true" />
+        }
+    </div>
+    <div class="card-footer">
+
+    </div>
+</div>
+
+-->
+
+<div class="card-columns">
+    @foreach (var p in Context.Photos)
+    {
+        <div class="card">
+            <div class="card-header">
+                <h4 class="userPhotoName">@p.Name</h4>
+            </div>
+            <div class="card-body frontPagePhotos">
+                @{
+                    var photoPath = "~/images/" + (p.Photo ?? "noimage.jpg");
+                    <img class="card-img-top " src="@photoPath" asp-append-version="true" />
+                }
+            </div>
+            <div class="card-footer">
+                <span class="material-icons commentIcon">
+                    textsms
+                </span>
+                <span class="material-icons likeIcon">
+                    favorite
+                </span>
+            </div>
+        </div>
+    }
+</div>

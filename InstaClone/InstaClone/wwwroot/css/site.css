@@ -118,7 +118,13 @@ body {
     margin: 5px;
 }
 
+.userPhotoName {
+    padding-left: 110px;
+}
 
+.frontPagePhotos {
+    background-position: center;
+}
 /*Buttons*/
 .uploadBtn {
     margin-left: 1000px;
@@ -126,5 +132,13 @@ body {
 
 .logoutBtn {
     background-color: burlywood;
+}
+
+.likeIcon {
+    padding-left: 290px;
+}
+
+.commentIcon {
+    margin-bottom: 20px;
 }
 

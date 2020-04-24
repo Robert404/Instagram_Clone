@@ -14,6 +14,15 @@
                     <a asp-controller="Photo" asp-action="Upload" class="btn btn-dark">Upload</a>
                 </div>
             }
+            @if (User.Identity.Name != Model.Name) 
+            {
+                <form asp-controller="Followers" asp-action="Follow">
+                    <input type="submit" value="Follow" asp-route-name="@Model.Name" />
+                </form>  
+                <div>
+                    @Model.SubscribersCount
+                </div>
+            }
         </div>
         <div class="card-body">
             <img class="card-img-top userProfilePhoto" src="@photoPath" asp-append-version="true" />
