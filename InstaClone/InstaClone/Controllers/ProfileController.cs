@@ -28,7 +28,6 @@ namespace InstaClone.Controllers
 
             return View(model) ;
         }
-
-      
+       
     }
 }

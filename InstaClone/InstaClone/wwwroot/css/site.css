@@ -9,7 +9,7 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: mediumblue;
+  color: midnightblue;
   font-family: 'Roboto';
 }
     a:hover {
@@ -70,6 +70,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  background-color:  whitesmoke;
 }
 .footer {
   position: absolute;
@@ -102,6 +103,19 @@ body {
         box-shadow: 0 5px 4px -6px #000;
     }
 
+
+.signInText, .signUpText {
+    margin: 0 0 50px 0;
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+    color: #e5e5e5;
+    border-bottom: solid 1px #e5e5e5;
+    background-color: dimgrey;
+    border-radius: 10px;
+}
+
+
 /*Images*/
 .userProfilePhoto {
     height: 150px;
@@ -117,6 +131,13 @@ body {
     border-radius: 7px;
     margin: 5px;
 }
+    .userAllPhotos:hover + .photoDeleteBtn, .photoDeleteBtn:hover {
+        display: inline-block;
+        position: absolute;
+        margin-top: 120px;
+        margin-left: -80px;
+        background-color: red;
+    }
 
 .userPhotoName {
     padding-left: 110px;
@@ -124,6 +145,10 @@ body {
 
 .frontPagePhotos {
     background-position: center;
+}
+
+.homePagePhotos {
+    background-color:  ghostwhite;
 }
 /*Buttons*/
 .uploadBtn {
@@ -142,3 +167,7 @@ body {
     margin-bottom: 20px;
 }
 
+
+.photoDeleteBtn {
+    display: none;
+}

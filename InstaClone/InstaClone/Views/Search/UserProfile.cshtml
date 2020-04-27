@@ -3,6 +3,7 @@
 
 @{
     var photoPath = "~/images/" + (Model.Image ?? "noimage.jpg");
+    ViewData["Title"] = Model.Name + " Profile";
 }
 
     <div class="card">
@@ -14,15 +15,7 @@
                     <a asp-controller="Photo" asp-action="Upload" class="btn btn-dark">Upload</a>
                 </div>
             }
-            @if (User.Identity.Name != Model.Name) 
-            {
-                <form asp-controller="Followers" asp-action="Follow">
-                    <input type="submit" value="Follow" asp-route-name="@Model.Name" />
-                </form>  
-                <div>
-                    @Model.SubscribersCount
-                </div>
-            }
+            <span class="material-icons likeIcon">favorite</span>
         </div>
         <div class="card-body">
             <img class="card-img-top userProfilePhoto" src="@photoPath" asp-append-version="true" />
@@ -33,7 +26,7 @@
                 if (m.Name == Model.Name)
                 {
                     var photoPath2 = "~/images/" + (m.Photo ?? "noimage.jpg");
-                    <img class="card-img-top userAllPhotos" src="@photoPath2" asp-append-version="true" />
+                    <img class="card-img-top userAllPhotos" src="@photoPath2" asp-append-version="true" />  
                 }
             }
         </div>

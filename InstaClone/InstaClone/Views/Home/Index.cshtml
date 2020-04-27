@@ -11,34 +11,13 @@
     </form>
 </div>
 
-<!--
-
-
-<div class="card">
-    <div class="card-header">
-
-    </div>
-    <div class="card-body">
-        @foreach (var photo in Context.Photos)
-        {
-            @photo.Name
-            var photoPath = "~/images/" + (photo.Photo ?? "noimage.jpg");
-            <img class="card-img-top userAllPhotos" src="@photoPath" asp-append-version="true" />
-        }
-    </div>
-    <div class="card-footer">
-
-    </div>
-</div>
-
--->
 
 <div class="card-columns">
     @foreach (var p in Context.Photos)
     {
-        <div class="card">
+        <div class="card homePagePhotos">
             <div class="card-header">
-                <h4 class="userPhotoName">@p.Name</h4>
+                <h4 class="userPhotoName"><a asp-controller="Search" asp-action="UserProfile" asp-route-name="@p.Name">@p.Name</a></h4>
             </div>
             <div class="card-body frontPagePhotos">
                 @{

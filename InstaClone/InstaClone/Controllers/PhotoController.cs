@@ -17,11 +17,13 @@ namespace InstaClone.Controllers
     {
         private readonly IHostingEnvironment _hostingEnvironment;
         private readonly ApplicationDbContext _context;
+        private readonly IPhoto _photoService;
 
-        public PhotoController(IHostingEnvironment hostingEnvironment, ApplicationDbContext context) 
+        public PhotoController(IHostingEnvironment hostingEnvironment, ApplicationDbContext context, IPhoto photoService) 
         {
             _hostingEnvironment = hostingEnvironment;
             _context = context;
+            _photoService = photoService;
         }
 
         public IActionResult Upload() 
@@ -53,6 +55,11 @@ namespace InstaClone.Controllers
             return RedirectToAction("Index","Home");
         }
 
+        public async Task<IActionResult> Delete(int id) 
+        {
+            await _photoService.Delete(id);
+            return RedirectToAction("Index", "Home");
+        }
 
     }
 }

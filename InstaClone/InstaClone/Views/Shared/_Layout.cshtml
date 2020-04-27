@@ -40,7 +40,7 @@
                         <a asp-controller="Profile" asp-action="Detail" asp-route-id="@UserManager.GetUserId(User)">@UserManager.GetUserName(User)</a>
 
                         <form method="post" asp-controller="Account" asp-action="Logout">
-                            <input class="btn logoutBtn" type="submit" value="Logout" />
+                            <input class="btn btn-sm logoutBtn" type="submit" value="Logout" />
                         </form>
                     }
                     else

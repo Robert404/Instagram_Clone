@@ -14,5 +14,6 @@ namespace InstaClone.Models.Profile
         public string Image { get; set; }
         public string PostedImages { get; set; }
         public string PostedImage { get; set; }
+
     }
 }

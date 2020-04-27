@@ -4,7 +4,7 @@
 
 @{
     var photoPath = "~/images/" + (Model.Image ?? "noimage.jpg");
-
+    ViewData["Title"] = "My Profile";
 }
 <div class="card">
     <div class="card-header">
@@ -23,6 +23,7 @@
             {
                 var photoPath2 = "~/images/" + (m.Photo ?? "noimage.jpg");
                 <img class="card-img-top userAllPhotos" src="@photoPath2" asp-append-version="true" />
+                <a asp-controller="Photo" asp-action="Delete" asp-route-id="@m.Id" class="btn btn-primary btn-sm photoDeleteBtn">Delete</a>
             }
 
         }

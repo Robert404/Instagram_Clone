@@ -16,6 +16,9 @@ namespace InstaClone.Controllers
             _userService = userService;
         }
 
-       
+        public IActionResult Follow(string name) 
+        {
+            return View();
+        }
     }
 }
