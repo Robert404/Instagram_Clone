@@ -2,23 +2,23 @@
 
 <h2 class="signInText">Sign Up</h2>
 <form method="post" asp-controller="Account" asp-action="Login"
-      asp-route-returnUrl="@Model.ReturnUrl">
+      asp-route-returnUrl="@Model.ReturnUrl" class="loginForm">
     <div asp-validation-summary="ModelOnly"></div>
     <div>
         <label asp-for="UserName"></label><br />
-        <input asp-for="UserName" />
+        <input asp-for="UserName" class="loginLabel" />
         <span asp-validation-for="UserName"></span>
     </div>
     <div>
         <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
+        <input asp-for="Password" class="loginLabel" />
         <span asp-validation-for="Password"></span>
     </div>
     <div>
         <label asp-for="RememberMe"></label><br />
-        <input asp-for="RememberMe" />
+        <input asp-for="RememberMe" class="loginLabel rememberMeLabel" />
     </div>
     <div>
-        <input type="submit" value="Sign In" />
+        <input type="submit" value="Sign In" class="btn btn-primary" />
     </div>
 </form>

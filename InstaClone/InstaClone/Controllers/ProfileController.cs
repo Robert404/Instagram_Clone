@@ -1,21 +1,23 @@
 ﻿using InstaClone.Data;
 using InstaClone.Models;
-using InstaClone.Models.Photo;
 using InstaClone.Models.Profile;
 using InstaClone.Models.User;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.IO;
+using System.Linq;
 
 namespace InstaClone.Controllers
 {
     public class ProfileController:Controller
     {
         private readonly IApplicationUser _userService;
-        public ProfileController(IApplicationUser userService) 
+        private readonly ApplicationDbContext _context;
+        public ProfileController(IApplicationUser userService, ApplicationDbContext context) 
         {
             _userService = userService;
+            _context = context;
         }
         public IActionResult Detail(string id)
         {
@@ -28,6 +30,8 @@ namespace InstaClone.Controllers
 
             return View(model) ;
         }
-       
+
+
+        
     }
 }

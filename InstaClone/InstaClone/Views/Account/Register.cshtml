@@ -1,34 +1,34 @@
 ﻿@model InstaClone.Models.User.RegisterModel
 
 <h2 class="signUpText">Sign Up of a new User</h2>
-<form method="post" asp-controller="Account" asp-action="Register" enctype="multipart/form-data">
+<form method="post" asp-controller="Account" asp-action="Register" enctype="multipart/form-data" class="registerForm">
     <div asp-validation-summary="ModelOnly"></div>
     <div>
         <label asp-for="Email"></label><br />
-        <input asp-for="Email" />
+        <input asp-for="Email" class="registrLabel" />
         <span asp-validation-for="Email"></span>
     </div>
     <div>
         <label asp-for="UserName"></label><br />
-        <input asp-for="UserName" />
+        <input asp-for="UserName" class="registrLabel" />
         <span asp-validation-for="UserName"></span>
     </div>
     <div>
         <label asp-for="Photo"></label><br />
-        <input asp-for="Photo" />
+        <input asp-for="Photo" class="registrLabel" />
     </div>
     <div>
         <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
+        <input asp-for="Password" class="registrLabel" />
         <span asp-validation-for="Password"></span>
     </div>
     <div>
         <label asp-for="PasswordConfirm"></label><br />
-        <input asp-for="PasswordConfirm" />
+        <input asp-for="PasswordConfirm" class="registrLabel" />
         <span asp-validation-for="PasswordConfirm"></span>
     </div>
     <div>
-        <input type="submit" value="Sign Up" />
+        <input type="submit" value="Sign Up" class="btn btn-primary" />
     </div>
 
     <!--

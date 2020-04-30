@@ -171,3 +171,43 @@ body {
 .photoDeleteBtn {
     display: none;
 }
+
+/*Forms*/
+.registerForm, .loginForm {
+    background: #fff;
+    padding: 4em 4em 2em;
+    max-width: 500px;
+    margin: 50px auto 0;
+    box-shadow: 0 0 1em #222;
+    border-radius: 20px;
+}
+
+    .registerForm label, .loginForm label {
+        font-family: 'Roboto';
+    }
+
+.loginLabel {
+    width: 360px;
+    position: center;
+    border-color: dimgrey;
+    border-width: 5px;
+    border-radius: 8px;
+}
+    
+
+.registrLabel {
+    width: 360px;
+    position: center;
+    border-color: dimgrey;
+    border-width: 5px;
+    border-radius: 8px;
+}
+
+    .loginLabel:focus, .registrLabel:focus {
+        border-color: cadetblue;
+    }
+
+.rememberMeLabel {
+    position:absolute;
+    width: 200px;
+}
