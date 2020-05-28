@@ -1,5 +1,6 @@
 ﻿@model InstaClone.Models.Profile.SearchIndexModel
 @inject ApplicationDbContext Context
+@using Microsoft.AspNetCore.Components;
 
 @{
     ViewData["Title"] = "Home Page";
@@ -29,10 +30,33 @@
                 <span class="material-icons commentIcon">
                     textsms
                 </span>
-                <span class="material-icons likeIcon">
-                    favorite
-                </span>
+                <button onclick="await @ToggleLike()" OnLikeToggled="" type="submit" class="btn @(liked == true? "btn-primary" : "btn-secondary")">
+                    <i class="material-icons">favorite</i>
+                </button>
+                Liked: @postLiked
             </div>
         </div>
     }
 </div>
+
+
+@functions{
+
+    [Parameter] public EventCallback<bool> OnLikeToggled { get; set; }
+    bool liked = false;
+
+    async Task ToggleLike()
+    {
+        liked = !liked;
+        await OnLikeToggled.InvokeAsync(liked);
+    }
+}
+
+@functions{
+    bool postLiked = false;
+
+    async Task PostLiked(bool isLiked)
+    {
+        postLiked = isLiked;
+    }
+}

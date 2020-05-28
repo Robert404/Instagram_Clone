@@ -10,12 +10,6 @@
         <div class="card-header">
             <h2>@Model.Name</h2>
             <a asp-controller="Profile" asp-action="Follow" asp-route-name="@Model.Name" class="btn btn-primary">Follow</a>
-            @if (Model.Subscribers.Count() == 0) 
-            {
-                <h2>None</h2>
-            }
-
-            <h2>@Model.Subscribers.Count()</h2>
 
             <!--Need to be removed-->
             @if (User.Identity.Name == Model.Name)
@@ -24,6 +18,7 @@
                     <a asp-controller="Photo" asp-action="Upload" class="btn btn-dark">Upload</a>
                 </div>
             }
+
         </div>
         <div class="card-body">
             <img class="card-img-top userProfilePhoto" src="@photoPath" asp-append-version="true" />
@@ -39,3 +34,4 @@
             }
         </div>
     </div>
+

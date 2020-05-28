@@ -44,9 +44,7 @@ namespace InstaClone.Controllers
             var model = new ProfileModel
             {
                 Name = user.UserName,
-                Image = user.Image,
-                Subscribers = user.Subscribers,
-                Subscribed = user.Subscribed
+                Image = user.Image
             };
 
             return View(model);
